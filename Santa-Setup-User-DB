@@ -1,0 +1,26 @@
+-- Active: 1695757802755@@192.168.86.41@5432@postgres@public
+/*
+********************************************************************
+This is the setup script
+
+********************************************************************
+*/
+
+
+create user santa with PASSWORD 'H0h1H1';
+create user santa_dev with PASSWORD 'I1i1I1';
+
+CREATE DATABASE secret_santa
+    WITH
+    OWNER = santadev
+    ENCODING = 'UTF8'
+    CONNECTION LIMIT = -1
+    IS_TEMPLATE = False;
+
+GRANT ALL ON DATABASE secret_santa TO santadev WITH GRANT OPTION;
+GRANT TEMPORARY ON DATABASE secret_santa TO santadev;
+
+
+use DATABASE secret santa
+
+
